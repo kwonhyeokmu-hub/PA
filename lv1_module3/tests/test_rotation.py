@@ -36,11 +36,11 @@ def test_columns_are_orthonormal(rot_func, theta):
             1.0
 		)
 for i in range(3):
-		for j in range(i + 1, 3):
-			assert np.isclose(
-				 R[:, i] @ R[:, j], 
-				0.0
-			  ), f"{i},{j}번 열이 직교하지 않음"
+	for j in range(i + 1, 3):
+		assert np.isclose(
+			R[:, i] @ R[:, j], 
+			0.0
+			 ), f"{i},{j}번 열이 직교하지 않음"
 
 @pytest.mark.parametrize("rot_func", ROT_FUNCS)
 @pytest.mark.parametrize("theta", ANGLES)
